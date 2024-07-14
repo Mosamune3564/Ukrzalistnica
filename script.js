@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             trainsTableBody.appendChild(row);
         });
+        document.querySelectorAll('.select-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const train = event.target.getAttribute('data-train');
+                showModal(fromElement.textContent.trim(), toElement.textContent.trim(), train);
+            });
+        });
     };
 
     const searchButton = document.getElementById("search-button");
