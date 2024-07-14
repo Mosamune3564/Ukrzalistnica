@@ -63,47 +63,28 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(`Знайти доступні поїзда з: ${from} до: ${to}`);
         updateTrainsTable(route);
     });
-    switchButton.addEventListener("click", () => {
-        const from = fromElement.textContent.trim();
-        const to = toElement.textContent.trim();
-        fromElement.textContent = to;
-        toElement.textContent = from;
-        updateTrainsTable(`${to} → ${from}`);
-    });
+        // Отримуємо посилання на кнопки за їх id
+    const enButton = document.getElementById('en');
+    const uaButton = document.getElementById('uk');
+    
+    // Функція для зміни мови на англійську
+    function changeToEnglish() {
+        // Опрацьовуємо зміну мови на англійську
+        console.log('Змінити мову на англійську');
+        // Тут можна виконати додаткові дії, наприклад, змінити тексти на сторінці
+    }
+    
+    // Функція для зміни мови на українську
+    function changeToUkrainian() {
+        // Опрацьовуємо зміну мови на українську
+        console.log('Змінити мову на українську');
+        // Тут можна виконати додаткові дії
+    }
+    
+    // Додаємо обробники подій на кнопки
+    enButton.addEventListener('click', changeToEnglish);
+    uaButton.addEventListener('click', changeToUkrainian);
 
-    langButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const lang = button.getAttribute("data-lang");
-            changeLanguage(lang);
-        });
-    });
-
-    const changeLanguage = (lang) => {
-        const ukElements = document.querySelectorAll(".lang-uk");
-        const enElements = document.querySelectorAll(".lang-en");
-        if (lang === 'uk') {
-            ukElements.forEach(el => el.style.display = '');
-            enElements.forEach(el => el.style.display = 'none');
-        } else {
-            ukElements.forEach(el => el.style.display = 'none');
-            enElements.forEach(el => el.style.display = '');
-        }
-    };
-
-    const showModal = (from, to, train) => {
-        modalContent.innerHTML = `Маршрут: ${from} → ${to}<br>Поїзд: ${train}`;
-        modal.style.display = "block";
-    };
-
-    modalClose.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (event) => {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    });
 
     // Ініціалізація таблиці для початкового маршруту
     updateTrainsTable("Київ → Львів");
