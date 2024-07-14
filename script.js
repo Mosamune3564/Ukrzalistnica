@@ -268,4 +268,23 @@ document.addEventListener('DOMContentLoaded', function () {
         purchases.push(purchase);
         localStorage.setItem('purchases', JSON.stringify(purchases));
     }
+    function viewPurchaseHistory() {
+        const purchases = JSON.parse(localStorage.getItem('purchases')) || [];
+        purchaseHistoryContainer.innerHTML = '';
+
+        if (purchases.length === 0) {
+            purchaseHistoryContainer.textContent = 'No purchase history available.';
+        } else {
+            const list = document.createElement('ul');
+            purchases.forEach(purchase => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Train: ${purchase.train}, Route: ${purchase.route}, Seats: ${purchase.seats.join(', ')}`;
+                list.appendChild(listItem);
+            });
+            purchaseHistoryContainer.appendChild(list);
+        }
+    }
+
+    viewHistoryButtonUk.addEventListener('click', viewPurchaseHistory);
+    viewHistoryButtonEn.addEventListener('click', viewPurchaseHistory);
 });
