@@ -120,3 +120,38 @@ body {
 #trains-table tr:hover {
     background-color: #f1f1f1;
 }
+.modal {
+    display: none; /* Приховано за замовчуванням */
+    position: fixed; /* Залишається на місці */
+    z-index: 1; /* Перекриває все інше */
+    padding-top: 100px; /* Відступ від верху */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ширина */
+    height: 100%; /* Висота */
+    overflow: auto; /* Додає скролл */
+    background-color: rgb(0,0,0); /* Фоновий колір */
+    background-color: rgba(0,0,0,0.4); /* З прозорістю */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
