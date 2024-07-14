@@ -263,4 +263,9 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+     function savePurchase(purchase) {
+        const purchases = JSON.parse(localStorage.getItem('purchases')) || [];
+        purchases.push(purchase);
+        localStorage.setItem('purchases', JSON.stringify(purchases));
+    }
 });
