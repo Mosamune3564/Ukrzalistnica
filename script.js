@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTrainsTable(route);
     });
         // Отримуємо посилання на кнопки за їх id
-    const enButton = document.getElementById('en');
-    const uaButton = document.getElementById('uk');
+    const enButton = document.getElementById('English');
+    const uaButton = document.getElementById('Українська');
     
     // Функція для зміни мови на англійську
     function changeToEnglish() {
