@@ -120,38 +120,34 @@ body {
 #trains-table tr:hover {
     background-color: #f1f1f1;
 }
-.modal {
-    display: none; /* Приховано за замовчуванням */
-    position: fixed; /* Залишається на місці */
-    z-index: 1; /* Перекриває все інше */
-    padding-top: 100px; /* Відступ від верху */
-    left: 0;
-    top: 0;
-    width: 100%; /* Ширина */
-    height: 100%; /* Висота */
-    overflow: auto; /* Додає скролл */
-    background-color: rgb(0,0,0); /* Фоновий колір */
-    background-color: rgba(0,0,0,0.4); /* З прозорістю */
+/* Стилізація для кнопок зміни мови */
+.language-buttons {
+    display: flex; /* Використовуємо flexbox для розташування кнопок у рядок */
+    gap: 10px; /* Відстань між кнопками */
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+.language-buttons button {
+    padding: 8px 16px; /* Відступи всередині кнопки */
+    font-size: 14px; /* Розмір шрифту */
+    border: none; /* Видаляємо рамку кнопки */
+    cursor: pointer; /* Змінюємо курсор при наведенні на кнопку */
+    background-color: #007bff; /* Колір фону кнопки */
+    color: white; /* Колір тексту */
+    border-radius: 4px; /* Закругленість кутиків */
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.language-buttons button:hover {
+    background-color: #0056b3; /* Колір фону кнопки при наведенні */
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.language-buttons button:focus {
+    outline: none; /* Видаляємо фокусну рамку */
+}
+
+/* Додаткові стилі для кнопок, якщо потрібно */
+.language-buttons #en {
+    background-color: #28a745; /* Зелений колір для кнопки EN */
+}
+.language-buttons #uk {
+    background-color: #dc3545; /* Червоний колір для кнопки UA */
 }
